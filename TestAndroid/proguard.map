@@ -1,0 +1,4 @@
+com.example.testandroid.Controller -> com.example.testandroid.c
+	java.util.ArrayList getList() -> g
+	void init(android.content.Context context) -> i
+	void printInfo() -> p

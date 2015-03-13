@@ -1,0 +1,21 @@
+<body>
+SDK API文档概述       		
+
+<br><br>
+SDK主要负责提供功能分为以下四点：<br>
+1.提供可配置的视频编辑功能数据，用于在编辑界面展示，比如MV、滤镜、音乐等等；<br>
+2.每种编辑功能对应的商店数据的下载；<br>
+3.视频的渲染播放、暂停；<br>
+4.视频的编码保存输出。
+<br><br>
+SDK提供的接口调用全部封装在VideoProcessEngine类里，在编辑视频Activity的启动时调用createVideoProcessEngine方法并且传入surface和inputPath，
+返回一个VideoProcessEngine对象，在Activity销毁时会调用release方法进行释放。
+<br><br>
+首先VideoProcessEngine提供了一组视频渲染、播放、保存的方法，在点击具体编辑按钮时会把对应的效果id通过applyEffect和applyMusic方法传入给SDK进行渲染、播放，中间暂停和继续播放通过pause和resume方法进行调用，
+点击下一步按钮时会调用saveVideoToPath把最终应用完效果的视频渲染、编码、保存起来。
+<br><br>
+除了视频处理相关的方法，VideoProcessEngine还提供了一组数据获取的方法，在进入编辑视频Activity时会先调用getVideoFunctions方法同步加载底部Toolbar的数据，之后当点击商店按钮时，
+会调用loadEffectStore或者loadMusicStore分别获取对应商店的数据，点击下载按钮会调用downloadEffectAsset或downloadMusicAsset方法下载资源。
+<br><br>
+接口返回的具体数据结构详见本API说明文档
+</body>
