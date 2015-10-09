@@ -7,19 +7,14 @@
         android:id="@+id/titleBar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@android:color/darker_gray"/>
+        android:background="@android:color/white"/>
     
     <TextView 
         android:id="@+id/bottomBar"
         android:layout_width="match_parent"
         android:layout_height="48dp"
-        android:background="@android:color/darker_gray"
+        android:background="@android:color/white"
         android:layout_alignParentBottom="true"/>
     
-    <com.example.testandroid.view.AnimationView 
-        android:id="@+id/animationView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:visibility="gone"/>
 
 </RelativeLayout>

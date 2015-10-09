@@ -4,13 +4,13 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.Serializable;
+import java.net.URI;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Bitmap.Config;
 import android.graphics.BitmapFactory;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -28,7 +28,7 @@ import com.example.testandroid.util.DensityUtil;
 public class MainActivity extends Activity {
 	
 	private String[] DEMO_DES = {
-//			"Animation", 
+			"Animation", 
 			"LifeCycle", 
 			"WindowSoftInputMode", 
 			"ViewTree",
@@ -39,11 +39,20 @@ public class MainActivity extends Activity {
 			"CupInfoActivity", 
 			"Image9PatchAtivity",
 			"MaskBitmapActivity",
-			"WeChatShareActivity"};
+			"WeChatShareActivity",
+			"GetAppSignatureActivity",
+			"HttpActivity",
+			"TracerouteActivity",
+			"AsyncTaskActivity",
+			"MD5Activity",
+			"ImageScaleTypeActivity",
+			"CanvasDrawActivity",
+			"TextureViewCameraActivity"
+	};
 	
 	@SuppressWarnings("rawtypes")
 	private Class[] CLASS = {
-//			AnimationActivity.class,
+			AnimationActivity.class,
 			LifeCycleActivity.class,
 			WindowSoftInputModeActivity.class,
 			ViewTreeActivity.class,
@@ -54,7 +63,15 @@ public class MainActivity extends Activity {
 			CupInfoActivity.class,
 			Image9PatchAtivity.class,
 			MaskBitmapActivity.class,
-			WeChatShareActivity.class
+			WeChatShareActivity.class,
+			GetAppSignatureActivity.class,
+			HttpActivity.class,
+			TracerouteActivity.class,
+			AsyncTaskActivity.class,
+			MD5Activity.class,
+			ImageScaleTypeActivity.class,
+			CanvasDrawActivity.class,
+			TextureViewCameraActivity.class
 	};
 	
 	private ListView mListView;
@@ -65,6 +82,11 @@ public class MainActivity extends Activity {
 		
 //		Uri uri = Uri.parse("android.resource://com.example.testandroid/" + R.drawable.ic_launcher);
 //		System.out.println(uri.getLastPathSegment());
+		
+		URI uri = URI.create("http://us.sinaimg.cn/0007iJenjx06Vsb24XKg01040100aBEo0k01.mp4?KID=unistore,video&Expires=1443077914&ssig=Uh%2F%2Bly7ZZU");
+		System.out.println(uri.getHost());
+		System.out.println(uri.getPath());
+		System.out.println(uri.getAuthority());
 		
 		mListView = new ListView(this);
 		mListView.setBackgroundColor(getResources().getColor(android.R.color.black));

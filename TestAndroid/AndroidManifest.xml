@@ -9,11 +9,19 @@
         android:targetSdkVersion="18" />
     
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_VIDEO" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" >
+        android:label="@string/app_name"
+        android:hardwareAccelerated="false" >
         <activity
             android:name="com.example.testandroid.MainActivity"
             android:label="@string/app_name" >
@@ -22,6 +30,10 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.testandroid.AnimationActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize" >
         </activity>
         <activity
             android:name="com.example.testandroid.LifeCycleActivity"
@@ -66,6 +78,37 @@
         </activity>
         <activity
             android:name="com.example.testandroid.WeChatShareActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.GetAppSignatureActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.HttpActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.TracerouteActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.AsyncTaskActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.ImageScaleTypeActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.CanvasDrawActivity" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.TextureViewCameraActivity"
+            android:hardwareAccelerated="true" >
+        </activity>
+        <activity
+            android:name="com.example.testandroid.MD5Activity" >
+            <intent-filter> 
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <data android:scheme="testandroid" android:host="weibo.cn" android:path="/md5"/>
+           	</intent-filter>
         </activity>
         
     </application>

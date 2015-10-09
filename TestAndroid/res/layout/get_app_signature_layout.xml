@@ -5,9 +5,8 @@
     android:orientation="vertical" >
 
     <TextView
-        android:id="@+id/image9patch"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="@drawable/helper_video_videorecord" />
+        android:id="@+id/appSignature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>
